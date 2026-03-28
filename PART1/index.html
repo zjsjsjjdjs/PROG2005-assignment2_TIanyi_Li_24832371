@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Inventory Manager - TypeScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Inventory Manager</h1>
+
+        <!-- Add / Edit Form -->
+        <div class="form-card">
+            <h2 id="form-title">Add New Item</h2>
+            <form id="item-form">
+                <input type="text" id="item-id" placeholder="Item ID (unique)" required>
+                <input type="text" id="item-name" placeholder="Item Name" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option>Electronics</option>
+                    <option>Furniture</option>
+                    <option>Clothing</option>
+                    <option>Tools</option>
+                    <option>Miscellaneous</option>
+                </select>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <input type="number" id="price" step="0.01" placeholder="Price" required>
+                <input type="text" id="supplier" placeholder="Supplier Name" required>
+                <select id="stock-status" required>
+                    <option>In Stock</option>
+                    <option>Low Stock</option>
+                    <option>Out of Stock</option>
+                </select>
+                <select id="popular">
+                    <option value="Yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+                <textarea id="comment" placeholder="Comment (optional)"></textarea>
+                <button type="submit" id="submit-btn">Add Item</button>
+                <button type="button" id="cancel-edit" style="display:none;">Cancel Edit</button>
+            </form>
+        </div>
+
+        <!-- Search & Actions -->
+        <div class="actions">
+            <input type="text" id="search-name" placeholder="Search by item name...">
+            <button id="search-btn">🔍 Search</button>
+            <button id="show-all-btn">📋 Show All</button>
+            <button id="show-popular-btn">⭐ Show Popular</button>
+        </div>
+
+        <!-- Inventory Table -->
+        <div id="inventory-table"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
