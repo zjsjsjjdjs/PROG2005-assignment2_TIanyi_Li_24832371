@@ -1,0 +1,54 @@
+<h2>{{ isEditMode ? 'Edit Item' : 'Add New Item' }}</h2>
+<form (ngSubmit)="onSubmit()" #itemForm="ngForm">
+  <div>
+    <label>Item ID</label>
+    <input type="text" name="id" [(ngModel)]="item.id" required [disabled]="isEditMode">
+  </div>
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="item.name" required>
+  </div>
+  <div>
+    <label>Category</label>
+    <select name="category" [(ngModel)]="item.category" required>
+      <option value="Electronics">Electronics</option>
+      <option value="Furniture">Furniture</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Tools">Tools</option>
+      <option value="Miscellaneous">Miscellaneous</option>
+    </select>
+  </div>
+  <div>
+    <label>Quantity</label>
+    <input type="number" name="quantity" [(ngModel)]="item.quantity" required min="0">
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" name="price" [(ngModel)]="item.price" required min="0" step="0.01">
+  </div>
+  <div>
+    <label>Supplier</label>
+    <input type="text" name="supplier" [(ngModel)]="item.supplier" required>
+  </div>
+  <div>
+    <label>Stock Status</label>
+    <select name="stockStatus" [(ngModel)]="item.stockStatus" required>
+      <option value="In Stock">In Stock</option>
+      <option value="Low Stock">Low Stock</option>
+      <option value="Out of Stock">Out of Stock</option>
+    </select>
+  </div>
+  <div>
+    <label>Popular</label>
+    <select name="popular" [(ngModel)]="item.popular" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <div>
+    <label>Comment</label>
+    <textarea name="comment" [(ngModel)]="item.comment"></textarea>
+  </div>
+  <button type="submit" [disabled]="!itemForm.valid">{{ isEditMode ? 'Update' : 'Add' }}</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>

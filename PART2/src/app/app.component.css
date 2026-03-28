@@ -1,0 +1,7 @@
+/* 可留空或添加导航栏样式 */
+nav {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 8px;
+}
